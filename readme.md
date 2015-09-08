@@ -4,10 +4,15 @@ A very basic standalone view template renderer using the excellent Blade syntax 
 
 Check out the documentation here <http://laravel.com/docs/4.2/templates>
 
+**NB: 2015-09-08:**
+**NB: This project is not yet complete and I cannot recommend you use it on a live system.**
+**NB: The cache class is currently incomplete**
+
+
 This class supports only a subset of the Laravel v4.2 Blade syntax, these are the missing features for which I'll add support:
 
-- View location package:: syntax
-- @overwrite - I'll add this at some point
+- View location package::path/to/view syntax
+- @overwrite - I'll add support for this
 	
 	
 The language translation features need to reference your translation class so can't be set out of the box. However you can pass custom commands to the constructor like this:
@@ -27,8 +32,6 @@ This class has a couple of additional features not included with Laravel Blade v
 - It will optionally strip whitespace, set strip_whitespace = true
 - Supports the @set command - the brainchild of @alexdover
 - Supports an @unset command
-
-**NB: The cache class is currently incomplete**
 
 ### Installation
 
