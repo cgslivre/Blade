@@ -4,9 +4,8 @@ A very basic standalone view template renderer using the excellent Blade syntax 
 
 Check out the documentation here <http://laravel.com/docs/4.2/templates>
 
-**NB: 2015-09-08:**
-**NB: This project is not yet complete and I cannot recommend you use it on a live system.**
-**NB: The cache class is currently incomplete**
+**2015-09-08:**
+**This project is not yet complete and I do not recommend you use it on a live system.**
 
 
 This class supports only a subset of the Laravel v4.2 Blade syntax, these are the missing features for which I'll add support:
@@ -14,30 +13,12 @@ This class supports only a subset of the Laravel v4.2 Blade syntax, these are th
 - View location package::path/to/view syntax
 - @overwrite - I'll add support for this
 	
-	
-The language translation features need to reference your translation class so can't be set out of the box. However you can pass custom commands to the constructor like this:
-
-```php
-$view = new Dijix\Blade(array(
-	'commands' => array(
-		'/@lang(\'(.*)\')/i' => '<?php echo t(\'$1\') ?>',
-		'/@choice(\'(.*),\s*'(.*)'\')/i' => '<?php echo tc(\'$1\', \'$2\') ?>'
-	),
-));
-```	
-
 This class has a couple of additional features not included with Laravel Blade v4.2	
 
 - A 'development' mode which will not hash the filenames so you can quickly see where the errors are.
 - It will optionally strip whitespace, set strip_whitespace = true
 - Supports the @set command - the brainchild of @alexdover
 - Supports an @unset command
-
-### Installation
-
-```bash
-composer require dijitaltrix/blade
-```
 
 ### Usage
 
@@ -81,6 +62,18 @@ $view->renderString($blade_string, array(
 ));
 
 ```
+
+The language translation features need to reference your translation class so can't be set out of the box. However you can pass custom commands to the constructor like this:
+
+```php
+$view = new Dijix\Blade(array(
+	'commands' => array(
+		'/@lang(\'(.*)\')/i' => '<?php echo t(\'$1\') ?>',
+		'/@choice(\'(.*),\s*'(.*)'\')/i' => '<?php echo tc(\'$1\', \'$2\') ?>'
+	),
+));
+```	
+
 
 ### Using with Slim Framework 3
 
