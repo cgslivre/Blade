@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>@yield('title')</title>
+</head>
+<body>
+	<h1><?php echo $title; ?></h1>
+
+	<div class="posts">
+		<?php foreach($posts as $post): ?>
+		<div class="post">
+			
+		</div>
+		<?php endforeach; ?>
+	</div>
+
+	<?php $choice =  'Dark side'; ?>
+	
+	<?php echo $choice; ?>
+	
+	<?php echo t('something.to.translate') ?>
+	<?php echo tc('something.to.translate', $choice) ?>
+
+	<?php unset($choice); ?>
+
+	<div class="posts">
+		<?php if ( ! empty($posts)): ?>
+		<?php foreach ($posts as $post): ?>
+		<div class="post">
+			
+		</div>
+		<?php endforeach; ?>
+		<?php else: ?>
+		<p>There are no posts</p>
+		<?php endif; ?>
+	</div>
+	
+	<?php if ($night == $day): ?>
+	<p>Welcome dark soul</p>
+	<?php elseif ($day == $night): ?>
+	<p>So you arrived</p>
+	<?php else: ?><p>Yo!</p>
+	<?php endif; ?>
+	
+	
+</body>
+</html>

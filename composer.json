@@ -1,0 +1,16 @@
+{
+    "name": "dijitaltrix/blade",
+    "description": "A standalone Laravel Blade 4 syntax compatible view renderer with no dependencies",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ian Grindley",
+            "email": "ian@dijix.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+    	"php": ">=5.3.0"
+    }
+}
