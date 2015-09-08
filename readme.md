@@ -1,21 +1,19 @@
 # Blade view renderer
 
-A very basic standalone view template renderer using the excellent Blade syntax from Taylor Otwells Laravel 4 framework. 
+A very basic standalone view template renderer using the excellent Blade syntax from Taylor Otwells' excellent Laravel 4 framework. 
 
 Check out the documentation here <http://laravel.com/docs/4.2/templates>
 
 This class supports only a subset of the Laravel v4.2 Blade syntax, these are the missing features for which I'll add support:
 
-	View location package:: syntax
-	@overwrite, this is the default anyway
+- View location package:: syntax
+- @overwrite - I'll add this at some point
 	
 	
 The language translation features need to reference your translation class so can't be set out of the box. However you can pass custom commands to the constructor like this:
 
 ```php
 $view = new Dijix\Blade(array(
-	'view_path' => 'app/views',
-	'cache_path' => 'cache/views',
 	'commands' => array(
 		'/@lang(\'(.*)\')/i' => '<?php echo t(\'$1\') ?>',
 		'/@choice(\'(.*),\s*'(.*)'\')/i' => '<?php echo tc(\'$1\', \'$2\') ?>'
@@ -25,11 +23,12 @@ $view = new Dijix\Blade(array(
 
 This class has a couple of additional features not included with Laravel Blade v4.2	
 
-	A 'development' mode which will not hash the filenames so you can quickly see where the errors are.
-	It will optionally strip whitespace, set strip_whitespace = true
-	Supports the @set command - the brainchild of @alexdover
-	Supports an @unset command
+- A 'development' mode which will not hash the filenames so you can quickly see where the errors are.
+- It will optionally strip whitespace, set strip_whitespace = true
+- Supports the @set command - the brainchild of @alexdover
+- Supports an @unset command
 
+**NB: The cache class is currently incomplete**
 
 ### Installation
 
