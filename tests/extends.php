@@ -9,4 +9,4 @@ $view = new Dijix\Blade(array(
 	'cache_mode' => 'dev',
 ));
 
-echo $view->render('child');
+echo $view->render(realpath('child'));
